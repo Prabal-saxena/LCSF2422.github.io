@@ -1,0 +1,75 @@
+
+body, header, nav, main, footer, h1, div, img, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+header {
+    width: 25%;
+    float: left;
+    padding-bottom: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+header img {
+    margin: 0 auto;
+}
+
+#Advertisement {
+    float: right;
+    text-align: center;
+    display: block;
+    width: 1128px;
+    height: 184px;
+    background-color: lightyellow;
+    margin: 0em 0em 0em 0em;
+    overflow: auto;
+}
+
+nav{
+    display: block;
+    float: right;
+    width: 75%;
+    margin: 0em -0.75em 0em 0em;
+    background-color: floralwhite;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    height: 36px;
+    display: flex;
+}
+
+nav li {
+    font-size: 1.5em;
+    font-family: "Francois One", sans-serif;
+    border-top: 1px solid #fff;
+    margin: 9px 0px 0px 50px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for Footer Paragraph*/
+footer{
+    background-color: black;
+    padding: 0.1em;
+}
+footer p {
+    color: white;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 0em 1em;
+}
+
+footer p a {
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    padding: 0em 1em;
+}
