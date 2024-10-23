@@ -1,4 +1,8 @@
 
+#container {
+    margin: 0px 5px 5px 5px;
+}
+
 body, header, nav, main, footer, h1, div, img, ul {
     margin: 0;
     padding: 0;
@@ -12,21 +16,21 @@ header {
 }
 
 img {
-    max-width: 100%;
+    width: 101%;
     display: block;
 }
 
 header img {
-    margin: 0 auto;
+    margin: 0px 0px 0px 0px;
 }
 
-#Advertisement {
+#advertisement {
     float: right;
     text-align: center;
     display: block;
-    width: 1128px;
+    width: 1130px;
     height: 184px;
-    background-color: lightyellow;
+    background-color: #DEDFDA;
     margin: 0em 0em 0em 0em;
     overflow: auto;
 }
@@ -34,31 +38,49 @@ header img {
 nav{
     display: block;
     float: right;
-    width: 75%;
-    margin: 0em -0.75em 0em 0em;
-    background-color: floralwhite;
+    width: 1130px;
+    margin: 0px;
+    background-color: #DEDFDA;
 }
 
 nav ul {
     list-style-type: none;
     text-align: center;
     height: 36px;
-    display: flex;
+    display: ruby-text;
 }
 
 nav li {
-    font-size: 1.5em;
-    font-family: "Francois One", sans-serif;
-    border-top: 1px solid #fff;
-    margin: 9px 0px 0px 50px;
-    color: white;
+    font-size: 1.4em;
+    font-family: monospace;
+    border-top: 0px solid #fff;
+    margin: 9px 0px 0px 143px;
+    color: #DEDFDA;
     text-decoration: none;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+#information {
+    overflow-wrap: normal;
+    margin: 0px;
+    float: left;
+    text-align: left;
+    display: block;
+    width: 1509px;
+    height: auto;
+    background-color: white;
 }
 
 /* Style for Footer Paragraph*/
 footer{
     background-color: black;
     padding: 0.1em;
+    float: left;
+    width: 1506px;
+    height: auto;
 }
 footer p {
     color: white;
