@@ -1,0 +1,97 @@
+
+#container {
+    margin: 0px 5px 5px 5px;
+}
+
+body, header, nav, main, footer, h1, div, img, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+header {
+    width: 25%;
+    float: left;
+    padding-bottom: 0;
+}
+
+img {
+    width: 101%;
+    display: block;
+}
+
+header img {
+    margin: 0px 0px 0px 0px;
+}
+
+#advertisement {
+    float: right;
+    text-align: center;
+    display: block;
+    width: 1130px;
+    height: 184px;
+    background-color: #DEDFDA;
+    margin: 0em 0em 0em 0em;
+    overflow: auto;
+}
+
+nav{
+    display: block;
+    float: right;
+    width: 1130px;
+    margin: 0px;
+    background-color: #DEDFDA;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    height: 36px;
+    display: ruby-text;
+}
+
+nav li {
+    font-size: 1.4em;
+    font-family: monospace;
+    border-top: 0px solid #fff;
+    margin: 9px 0px 0px 143px;
+    color: #DEDFDA;
+    text-decoration: none;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+#information {
+    overflow-wrap: normal;
+    margin: 0px;
+    float: left;
+    text-align: left;
+    display: block;
+    width: 1509px;
+    height: auto;
+    background-color: white;
+}
+
+/* Style for Footer Paragraph*/
+footer{
+    background-color: black;
+    padding: 0.1em;
+    float: left;
+    width: 1506px;
+    height: auto;
+}
+footer p {
+    color: white;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 0em 1em;
+}
+
+footer p a {
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    padding: 0em 1em;
+}
