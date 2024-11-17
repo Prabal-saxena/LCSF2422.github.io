@@ -1,97 +1,328 @@
 
-#container {
-    margin: 0px 5px 5px 5px;
-}
-
 body, header, nav, main, footer, h1, div, img, ul {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-header {
-    width: 25%;
-    float: left;
-    padding-bottom: 0;
+/* Style rules for body and images */
+body{
+    background-color: #000;
 }
 
-img {
-    width: 101%;
-    display: block;
+*{
+    box-sizing: border-box;
 }
 
-header img {
-    margin: 0px 0px 0px 0px;
+#companyname {
+    font-size: xxx-large;
+    margin: 0;
+    background-color: black;
+    text-align: right;
+    color: white;
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-#advertisement {
-    float: right;
-    text-align: center;
-    display: block;
-    width: 1130px;
-    height: 184px;
-    background-color: #DEDFDA;
-    margin: 0em 0em 0em 0em;
-    overflow: auto;
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #000;
+    height: 190px;
 }
 
+header img{
+    margin: 0 auto;
+}
+
+/* Style for rules for navigation area */
 nav{
-    display: block;
-    float: right;
-    width: 1130px;
-    margin: 0px;
-    background-color: #DEDFDA;
+    padding: 1%;
+    margin-bottom: 1%;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
     text-align: center;
-    height: 36px;
-    display: ruby-text;
 }
 
 nav li {
-    font-size: 1.4em;
-    font-family: monospace;
-    border-top: 0px solid #fff;
-    margin: 9px 0px 0px 143px;
-    color: #DEDFDA;
-    text-decoration: none;
+    font-size: 1.5em;
+    font-family: "Francois One", sans-serif;
+    border-top: 1px solid #fff;
 }
 
-nav li a {
-    text-decoration: none;
-}
-
-#information {
-    overflow-wrap: normal;
-    margin: 0px;
+nav li:first-child{
+    border-top: none;
     float: left;
-    text-align: left;
+}
+
+nav li a{
     display: block;
-    width: 1509px;
-    height: auto;
-    background-color: white;
+    color: #fff;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
 }
 
-/* Style for Footer Paragraph*/
-footer{
-    background-color: black;
-    padding: 0.1em;
-    float: left;
-    width: 1506px;
-    height: auto;
-}
-footer p {
-    color: white;
+/* Style rules for footer content */
+footer p{
     font-size: 0.75em;
     text-align: center;
-    padding: 0em 1em;
+    color: #fff;
+    padding: 0 1em;
 }
 
-footer p a {
-    color: white;
-    font-size: 1em;
-    text-align: center;
-    padding: 0em 1em;
+footer p a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+ul{
+    list-style-type: square;
+}
+
+ol{
+    list-style-type: upper-roman;
+}
+
+ul{
+    list-style-image: url(arrow.png);
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 630px), print{
+
+
+/* Tablet Viewport: Show tablet-desktop class, hide mobile class */
+
+    .tablet-desktop{
+        display: block;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    /* Tablet Viewport: Style rule for header */
+
+    header{
+        position: static;
+        padding-bottom: 2%;
+    }
+
+    /* Tablet Viewport: Style rules for nav area */
+
+    nav li{
+        border-top: none;
+        display: inline-block;
+        border-right: 1px solid #fff;
+    }
+
+    nav li:last-child{
+        border-right: none;
+    }
+
+    nav li a{
+        padding: 0.1em 0.75em;
+    }
+
+    /* Tablet Viewport: Style rules for main content area */
+
+    main ul{
+        margin: 0 0 4% 10%;
+
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+
+    .grid-item4{
+        grid-column: 1/span 3;
+    }
+
+    .pic-text{
+        font-size: 1em;
+        padding: 10px;
+    }
+
+
+    #excercises{
+        clear: left;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        background-color: #f2f2f2;
+        padding: 1% 2%;
+        background: linear-gradient(to right, #ccc, #fff);
+    }
+
+    #excercises dt{
+        font-weight: bold;
+    }
+
+    #excercises dd{
+        padding: 0.5% 1% 2% 0;
+    }
+
+    .tel-num{
+        font-size: 1.25em;
+    }
+
+    .map{
+        width: 600px;
+        height: 450px;
+    }
+
+    /* Tablet Viewport: Style rules for table */
+    table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 1%
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 2%;
+    }
+
+    th {
+        background-color: #000;
+        color: white;
+        font-size: 1.15em;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #ccc;
+    }
+}
+
+@media screen and (min-width: 1015px), print{
+
+/*Desktop Viewport: Style rule for header*/
+
+    header{
+        width: 25%;
+        float: left;
+        padding-bottom: 0;
+    }
+
+    img{
+        max-width: 50%;
+        display: block;
+    }
+    /*Desktop Viewport: Style rules for nav area*/
+
+    nav{
+        float: right;
+        width: 70%;
+        margin: 1em 1em 0 0;
+    }
+
+    nav ul{
+        text-align: right;
+    }
+    article h3{
+        font-size:1.75em;
+    }
+
+    nav li{
+        border: none;
+    }
+
+    nav li a{
+        padding: 0.5em 1em;
+    }
+
+    nav li a:hover{
+        color:#000;
+        background-color: #fff;
+    }
+
+
+    /*Destop Viewport: Style Rules for main content*/
+
+    main{
+        clear: left;
+    }
+
+    main h1{
+        font-size: 1.8em;
+    }
+
+    .pic-text{
+        font-size: 1.5em;
+        padding: 20px;
+    }
+
+    .frame{
+        opacity: 0.9;
+    }
+
+    .frame:hover{
+        opacity: 1;
+        box-shadow: 8px 8px 10px #808080;
+    }
+
+    #adv {
+        width: 89%;
+        display: flex;
+        height: 150px;
+        align-content: center;
+        margin: 0em 0em 0em 7em;
+    }
+
+    #promotionimage {
+        max-width: 100%;
+    }
+    #information {
+        color: white;
+        background-color: darkgreen;
+        width: 89%;
+        margin: 0em 0em 0em 7em;
+    }
+
+    #searchbox {
+        width: 400px;
+        height: 40px;
+        padding-top: 5px;
+        border-radius: 53px;
+        text-align: center;
+    }
+}
+
+/* Media Query for Large Desktop Viewports*/
+@media screen and (min-width:1921px){
+
+    #container{
+        width: 1920px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 80%;
+    }
+}
+
+/*Media Query for print*/
+
+@media print{
+    body{
+        background: #fff;
+        color:#000
+    }
+
 }

@@ -9,23 +9,31 @@
     <title>Weight & Scales</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
+    <meta name=“viewport” content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" type=“image/png” sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto+Slab:wght@100..900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Diplomata+SC&family=Gravitas+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="container">
     <header>
-        <a href="index.html"><img src="images/digital_food_scale_logo.png" alt="Weight & Scales Company Logo"
-                                  height="220"
-                                  width="297"></a>
+        <a href="index.html"><img src="images/digital_food_scale_logo.png" alt="Weight & Scales Company Logo"></a>
     </header>
-
-    <div id="advertisement">
-        <h2>Diwali Sale, all equipments are 50% off.<br>
-            Hurry! Limited Offer<br>
-            Halloween Sale, specific equipments are up to 70% off.<br>
-            Grab the offers! First Come First Serve.</h2>
+    <div style="width: 70%; float: right; margin: 0px 56px 0px 0px;">
+        <p id="companyname">DIGITAL FOOD SCALE</p>
     </div>
     <nav>
         <ul>
+            <li><form action="/search" method="get">
+                <input id="searchbox" type="search" id="search" name="query" placeholder="What are you looking for today?" required>
+                <!-- Search icon inside the button -->
+            </form></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="career.html">Career</a></li>
@@ -33,24 +41,13 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
-    <!-- Use the main area to add the main content to the webpage -->
-    <div id="information">
-        <p>
-        <h2>Welcome to Weight & Scales</h2> <br>
-        – <i>Precision in Every Measure</i> <br>
-        At Weight & Scales, we are dedicated to providing you with top-quality weighing and scale machines,
-        designed
-        for
-        accuracy and reliability in every application. <br>
-        Whether you need precise measurements for industrial, commercial, or personal use, our state-of-the-art
-        products
-        are engineered to meet your needs with unmatched performance.<br>
-        Explore our range of digital and mechanical scales, and discover how our commitment to precision can help
-        you
-        achieve your goals. With Weight & Scales, you can trust in the power of exact measurements.
-        </p>
-    </div>
 
+    <!-- Use the main area to add the main content to the webpage -->
+    <main>
+        <div id="adv">
+            <img id="promotionimage" src="images/Promotion.png" alt="Discount & Promotions">
+        </div>
+    </main>
     <footer>
         <p>&copy; Copyright 2099. All Rights Reserved.</p>
         <p><a href="mailto:contact@weightandscales.com">Request Information</a></p>
