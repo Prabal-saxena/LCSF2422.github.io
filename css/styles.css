@@ -277,6 +277,14 @@ ul{
         box-shadow: 8px 8px 10px #808080;
     }
 
+    #searchbox {
+        width: 400px;
+        height: 40px;
+        padding-top: 5px;
+        border-radius: 53px;
+        text-align: center;
+    }
+
     #adv {
         width: 89%;
         display: flex;
@@ -289,18 +297,47 @@ ul{
         max-width: 100%;
     }
     #information {
-        color: white;
-        background-color: darkgreen;
+        color: black;
+        background-color: white;
         width: 89%;
-        margin: 0em 0em 0em 7em;
+        margin: 1em 0em 0em 7em;
+        display: flex;
     }
 
-    #searchbox {
-        width: 400px;
-        height: 40px;
-        padding-top: 5px;
-        border-radius: 53px;
-        text-align: center;
+    #introduction {
+        width: 50%;
+        padding: 15px;
+        margin: 31px;
+        border-style: solid;
+        border-color: green;
+        border: solid;
+        border-radius: 56px;
+    }
+
+    #buyfromlink {
+        font-size: 1.3em;
+        color: #666600;
+        font-weight: bold;
+        text-shadow: 5px 5px 8px #ccc;
+    }
+
+    #foodscaleintroimage {
+        width: 49%;
+        height: 396px;
+    }
+
+    .grid{
+        color: black;
+        width: 89%;
+        margin: 1em 0em 0em 7em;
+        display: grid;
+        background-color: white;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+
+    .grid-item4{
+        grid-column: 1/span 3;
     }
 }
 
