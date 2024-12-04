@@ -16,7 +16,7 @@ body{
 
 #companyname {
     font-size: xxx-large;
-    margin: 0;
+    margin: 0em 0.7em 0em 0em;
     background-color: black;
     text-align: right;
     color: white;
@@ -92,6 +92,41 @@ ol{
 
 ul{
     list-style-image: url(arrow.png);
+}
+
+#contact{
+    text-align: center;
+    background-color: black;
+}
+
+#contact .contact-email-link{
+    color: white;
+    text-decoration: none;
+}
+
+#contact a{
+    color: white;
+    text-decoration: none;
+}
+
+#form{
+    margin-top: 2%;
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+
+form h2{
+    text-align: center;
+}
+
+form #submit {
+    margin: 0 auto;
+    border: none;
+    display: block;
+    padding: 2%;
+    background-color: #b3b3b3;
+    font-size: 1em;
+    border-radius: 10px;
 }
 
 /* Media Query for Tablet Viewport */
@@ -229,7 +264,7 @@ ul{
     nav{
         float: right;
         width: 70%;
-        margin: 1em 1em 0 0;
+        margin: 1em 3em 0em 0em;
     }
 
     nav ul{
@@ -266,6 +301,25 @@ ul{
     .pic-text{
         font-size: 1.5em;
         padding: 20px;
+        text-align: center;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    form {
+        width: auto;
+    }
+    .form-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
     }
 
     .frame{
@@ -275,6 +329,26 @@ ul{
     .frame:hover{
         opacity: 1;
         box-shadow: 8px 8px 10px #808080;
+    }
+
+    #feature-strip{
+        max-width: 100%;
+        height: 36px;
+        display: block;
+        background-color: black;
+        color: white;
+        margin: 0em 55px 1em 4em;
+        text-align: center;
+        font-size: xx-large;
+        font-family: 'Gravitas One';
+    }
+
+    .featureimage {
+        display: block;
+        margin: auto;
+        height: 177px;
+        width: 185px;
+        margin-top: 1em;
     }
 
     #searchbox {
@@ -290,7 +364,7 @@ ul{
         display: flex;
         height: 150px;
         align-content: center;
-        margin: 0em 0em 0em 7em;
+        margin: 0em 0em 0em 5em;
     }
 
     #promotionimage {
@@ -300,7 +374,7 @@ ul{
         color: black;
         background-color: white;
         width: 89%;
-        margin: 1em 0em 0em 7em;
+        margin: 1em 0em 0em 5em;
         display: flex;
     }
 
@@ -329,16 +403,13 @@ ul{
     .grid{
         color: black;
         width: 89%;
-        margin: 1em 0em 0em 7em;
+        margin: 1em 0em 0em 5em;
         display: grid;
         background-color: white;
         grid-template-columns: auto auto auto;
         grid-gap: 20px;
     }
 
-    .grid-item4{
-        grid-column: 1/span 3;
-    }
 }
 
 /* Media Query for Large Desktop Viewports*/
