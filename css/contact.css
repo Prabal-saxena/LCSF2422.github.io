@@ -1,0 +1,32 @@
+#form{
+    margin-top: 2%;
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+
+form h2{
+    text-align: center;
+}
+
+form #submit {
+    margin: 0 auto;
+    border: none;
+    display: block;
+    padding: 2%;
+    background-color: #b3b3b3;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 1015px), print{
+/*Desktop Viewport: Style rule for header*/
+
+    form {
+        width: auto;
+    }
+    .form-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+}
