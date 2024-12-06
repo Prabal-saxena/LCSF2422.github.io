@@ -1,0 +1,21 @@
+@media screen and (min-width: 1015px), print{
+
+/*Desktop Viewport: Style rule for header*/
+
+    #introvideo {
+        max-width: 100%;
+        display: block;
+        align-content: center;
+        margin: 0em 0em 0em 5em;
+        text-align: center;
+    }
+
+    #introcontent{
+        max-width: 100%;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+}
