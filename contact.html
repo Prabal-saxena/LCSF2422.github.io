@@ -9,6 +9,7 @@
     <title>Weight & Scales</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
     <meta name=“viewport” content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -44,6 +45,7 @@
 
     <!-- Use the main area to add the main content to the webpage -->
     <main>
+        <div style="background-color: white;height: 2px; max-width:100%; margin: 0;"></div>
         <div id="contact">
             <h2 style="color: white;">Have any query? Contact us today.</h2>
             <h4 style="color: white;" class="mobile tel-link"><a href="tel:8145559608">(519) 555-5555</a></h4>
@@ -62,7 +64,7 @@
         </div>
 
         <div id="form">
-            <h2>Complete the form below to begin your free trial.</h2>
+            <h2 style="text-align:center;">Complete the form so we can contact you for your requirements.</h2>
             <form class="form-grid">
                 <!-- Start Form -->
                 <fieldset>
@@ -80,9 +82,9 @@
                 <fieldset>
                     <legend>Additional Information</legend>
                     <p>I would like more information about:</p>
-                    <label for="grpfit"><input type="checkbox" name="interest" id="grpfit" value="Group Fitness">Group Fitness</label>
-                    <label for="prtrain"><input type="checkbox" name="interest" id="prtrain" value="Personal Training">Personal Training</label>
-                    <label for="nutr"><input type="checkbox" name="interest" id="nutr" value="Nutrition">Nutrition</label>
+                    <label for="grpfit"><input type="checkbox" name="interest" id="grpfit" value="Group Fitness">Bulk Order</label>
+                    <label for="prtrain"><input type="checkbox" name="interest" id="prtrain" value="Personal Training">Food Scale Demo</label>
+                    <label for="nutr"><input type="checkbox" name="interest" id="nutr" value="Nutrition">Offers</label>
                 </fieldset>
 
                 <fieldset>
@@ -101,7 +103,8 @@
                     <input type="text" id="promo" name="promo">
 
                 </fieldset>
-                <input type="submit" id="submit" value ="Submit" class="btn">
+                <input style="grid-column: 2; background-color: orange; width: 400px; border-radius: 20px" type="reset" id="reset" value ="Reset" class="btn">
+                <input style="grid-column: 2;" type="submit" id="submit" value ="Submit" class="btn">
             </form>
         </div>
     </main>
