@@ -1,5 +1,5 @@
 
-body, header, nav, main, footer, h1, div, img, ul {
+body, header, nav, main, footer, h1, div, img, ul, section, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -23,6 +23,12 @@ body{
     font-family: "Gravitas One", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.companylayout{
+    width: 70%;
+    float: right;
+    margin: 0px 56px 0px 0px;
 }
 
 header{
@@ -326,8 +332,8 @@ ul{
     .featureimage {
         display: block;
         margin: auto;
-        height: 177px;
-        width: 185px;
+        height: 180px;
+        width: 299px;
         margin-top: 1em;
     }
 
@@ -345,6 +351,14 @@ ul{
         height: 150px;
         align-content: center;
         margin: 0em 0em 0em 5em;
+    }
+
+    #introvideo {
+        max-width: 100%;
+        display: block;
+        align-content: center;
+        margin: 0em 0em 0em 5em;
+        text-align: center;
     }
 
     #promotionimage {
@@ -387,7 +401,11 @@ ul{
         display: grid;
         background-color: white;
         grid-template-columns: auto auto auto;
-        grid-gap: 20px;
+        grid-gap: 150px;
+        align-content: stretch;
+        justify-content: center;
+        justify-items: center;
+        align-items: end;
     }
 
 }
