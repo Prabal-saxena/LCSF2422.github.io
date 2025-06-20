@@ -8,7 +8,7 @@
         display: grid;
         background-color: white;
         grid-template-columns: auto auto auto;
-        grid-gap: 60px;
+        grid-gap: 92px;
         align-content: stretch;
         justify-content: center;
         justify-items: center;
@@ -43,8 +43,8 @@
         display: block;
         margin: auto;
         height: 196px;
-        width: 212px;
-        margin-top: 1em;
+        width: 331px;
+        margin-top: 2em;
     }
 
     #productbranding{
@@ -100,5 +100,11 @@
         grid-column: 2;
         grid-gap: 100px;
         padding: 30px 0px 0px 2%;
+    }
+
+    .frame{
+        opacity: 0.9;
+        height: 358px;
+ s       width: 393px;
     }
 }
