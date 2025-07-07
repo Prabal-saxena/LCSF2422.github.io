@@ -37,7 +37,14 @@
                 <!-- Search icon inside the button -->
             </form></li>
             <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li class="product-dropdown">
+                <a href="products.html" class="product-link">Products</a>
+                <div class="dropdown-content">
+                    <div class="dropdown-columns">
+                        <div class="loading-message">Loading categories...</div>
+                    </div>
+                </div>
+            </li>
             <li><a href="aboutus.html">About</a></li>
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -87,7 +94,7 @@
                 </ul>
                 <img style="height: 299px; width: 482px; border-radius: 20px;" src="images/product_salepoint.png" alt="Personal Training" class="round">
             </section>
-        </div>s
+        </div>
     </main>
     <footer>
         <p>&copy; Copyright 2099. All Rights Reserved.</p>
@@ -95,6 +102,7 @@
         <p>Prabal Saxena &nbsp; &nbsp; C0947493</p>
     </footer>
 </div>
-<script src="js/script.js"></script>
+<script src="js/product.js" defer></script>
+ <script src="js/categorydropdown.js" defer></script>
 </body>
 </html>
