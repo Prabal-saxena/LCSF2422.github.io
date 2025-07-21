@@ -35,7 +35,15 @@
             <li><form action="/search" method="get">
                 <input id="searchbox" type="search" id="search" name="query" placeholder="What are you looking for today?" required>
                 <!-- Search icon inside the button -->
-            </form></li>
+            </form>
+            </li>
+            <li>
+                <div class="cart-icon-container">
+                <a href="/cart" class="cart-link">
+                    <img src="/images/cart-icon.png" alt="Shopping Cart" class="cart-icon">
+                    <span id="cart-item-count" class="cart-badge">0</span> </a>
+                </div>
+            </li>
             <li><a href="index.html">Home</a></li>
             <li class="product-dropdown">
                 <a href="products.html" class="product-link">Products</a>
@@ -102,6 +110,7 @@
         <p>Prabal Saxena &nbsp; &nbsp; C0947493</p>
     </footer>
 </div>
+<script src="js/utils.js" defer></script>
 <script src="js/product.js" defer></script>
  <script src="js/categorydropdown.js" defer></script>
 </body>

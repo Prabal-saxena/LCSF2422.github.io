@@ -1,8 +1,14 @@
 const API_PRODUCT_URL = 'http://localhost:8081/api/product';
 
-
 const productsContainer = document.getElementById('productsContainer');
 const paginationControls = document.getElementById('paginationControls');
+
+const cartItemCountBadge = document.getElementById('cart-item-count');
+const CART_SERVICE_API_URL = 'http://localhost:8082/api/cart';
+
+// --- Cookie related variables ---
+const GUEST_CART_ID_COOKIE_NAME = 'guestCartId';
+const GUEST_CART_COOKIE_EXPIRY_DAYS = 90; // Persist guest cart for 90 days
 
 const appState = {
     categoryId: '',
@@ -105,19 +111,141 @@ function displayProducts(products) {
         // Append figcaption to figure
         figure.appendChild(figcaption);
 
-        // Create the "Add To Cart" button
-        const addToCartButton = document.createElement('input');
-        addToCartButton.type = 'submit';
-        addToCartButton.value = 'Add To Cart';
-        addToCartButton.className = 'addtocart';
-        addToCartButton.style = 'grid-column: 2;'
-
         // Append button to figure
-        figure.appendChild(addToCartButton);
+        figure.appendChild(createAddToCartButton(product.id));
 
         // Append the complete figure to the main container
         productsContainer.appendChild(figure);
     });
+}
+
+// Helper function to update the global cart count display
+function updateCartCountUI(count) {
+    if (cartItemCountBadge) {
+        cartItemCountBadge.textContent = count > 0 ? count : 0;
+        cartItemCountBadge.style.display = count > 0 ? 'inline-block' : 'none'; // Show/hide badge
+    }
+}
+
+function createAddToCartButton(productId){
+    const addToCartButton = document.createElement('button');
+    addToCartButton.type = 'button';
+    addToCartButton.textContent = 'Add To Cart';
+    addToCartButton.className = 'add-to-cart-btn';
+    addToCartButton.setAttribute("data-product-id", productId);
+    addToCartButton.style = 'grid-column: 2;'
+    return addToCartButton;
+}
+
+// Event listener for "Add to Cart" buttons using event delegation
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('add-to-cart-btn')) {
+        const productId = event.target.dataset.productId;
+        if (productId) {
+            addProductToCart(productId, event.target);
+        }
+    }
+});
+
+// Function to get the guestCartId, creating one if necessary
+async function getOrCreateGuestCartId() {
+    let guestCartId = getCookie(GUEST_CART_ID_COOKIE_NAME);
+
+    if (!guestCartId) {
+        console.log("No guestCartId found, requesting a new one...");
+        try {
+            // Call backend endpoint to generate a new guest cart ID
+            const response = await fetch(`${CART_SERVICE_API_URL}/guest_cart/create`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            });
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to create guest cart.');
+            }
+            const data = await response.json(); // Assuming backend returns { guestCartId: "..." }
+            guestCartId = data.guestCartId;
+            setCookie(GUEST_CART_ID_COOKIE_NAME, guestCartId, GUEST_CART_COOKIE_EXPIRY_DAYS);
+            console.log("New guestCartId created and set:", guestCartId);
+        } catch (error) {
+            console.error("Critical: Could not create guest cart ID:", error);
+            // Handle this gracefully, maybe disable cart features or show a persistent error.
+            return null;
+        }
+    }
+    return guestCartId;
+}
+
+// Modify fetchCartCount to use the guestCartId
+async function fetchCartCount() {
+    const guestCartId = await getOrCreateGuestCartId(); // Ensure ID exists
+
+    if (!guestCartId) {
+        updateCartCountUI(0); // If we can't get/create ID, assume 0
+        return;
+    }
+
+    try {
+        // Send guestCartId in header or as query param/body
+        const response = await fetch(`${CART_SERVICE_API_URL}/count`, {
+            headers: { 'X-Guest-Cart-Id': guestCartId } // Custom header is a good way
+        });
+        if (!response.ok) {
+            throw new Error(`Failed to fetch cart count: ${response.statusText}`);
+        }
+        const data = await response.json();
+        updateCartCountUI(data.count);
+    } catch (error) {
+        console.error("Error fetching cart count:", error);
+        updateCartCountUI(0);
+    }
+}
+
+// Modify addProductToCart to use the guestCartId
+async function addProductToCart(productId, buttonElement) {
+    console.log("Product added:", productId);
+    const guestCartId = await getOrCreateGuestCartId(); // Ensure ID exists
+    if (!guestCartId) {
+        alert("Could not add to cart: Unable to establish a cart session.");
+        return; // Prevent further action if no guestCartId
+    }
+
+    buttonElement.disabled = true;
+    const originalButtonText = buttonElement.textContent;
+    buttonElement.textContent = 'Adding...';
+
+    try {
+        const response = await fetch(`${CART_SERVICE_API_URL}/items`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Guest-Cart-Id': guestCartId // Send guest cart ID with every request
+            },
+            body: JSON.stringify({ productId: productId, quantity: 1 })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to add product to cart.');
+        }
+
+        const cartItem = await response.json();
+        console.log("Product added to cart:", cartItem);
+
+        buttonElement.textContent = 'Added!';
+        setTimeout(() => {
+            buttonElement.textContent = originalButtonText;
+            buttonElement.disabled = false;
+        }, 1500);
+
+        fetchCartCount(); // Update global cart count
+
+    } catch (error) {
+        console.error("Error adding product to cart:", error);
+        alert(`Error: ${error.message || 'Could not add product to cart.'}`);
+        buttonElement.textContent = originalButtonText;
+        buttonElement.disabled = false;
+    }
 }
 
 function setupPaginationControls(){
@@ -172,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productsContainer) {
         fetchData(); // Call without filters to get all products initially
     }
+    fetchCartCount(); // Fetch and display initial cart count
 });
 
 // Call the fetchData function when the page loads
