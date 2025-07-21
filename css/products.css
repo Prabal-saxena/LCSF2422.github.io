@@ -31,12 +31,40 @@
         font-weight: bold;
     }
 
-    .addtocart {
+    .add-to-cart-btn {
         grid-column: 2;
         border-radius: 20px;
         background-color: black;
         color: white;
         margin: 2px 2px 2px 160px;
+    }
+
+    .cart-icon-container {
+        position: relative;
+        display: inline-block; /* Or use flexbox */
+        height: 37px;
+    }
+
+    .cart-icon {
+        width: 59px; /* Adjust size */
+        height: 30px;
+        vertical-align: middle;
+    }
+
+    .cart-badge {
+        position: absolute;
+        top: -8px; /* Adjust positioning */
+        right: -8px; /* Adjust positioning */
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 3px 6px;
+        font-size: 0.7em;
+        font-weight: bold;
+        min-width: 18px; /* Ensure circular shape for single digits */
+        text-align: center;
+        line-height: 1; /* For vertical alignment */
+        display: none; /* Hidden by default when count is 0 */
     }
 
     .productimage {
