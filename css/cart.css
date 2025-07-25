@@ -1,0 +1,25 @@
+@media screen and (min-width: 1015px), print{
+/*Desktop Viewport: Style rule for header*/
+    
+    #cart-container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        margin-top: 25px;
+    }
+
+    #cart-product-list-container-div {
+        width: 70%;
+        height: 80px;
+        float: left;
+        background-color: bisque;
+    }
+
+    #cart-summary-div {
+        width: 30%;
+        height: 80px;
+        float: right;
+        background-color: aquamarine;
+    }
+    
+}
