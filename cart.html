@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weight & Scales</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <meta name=“viewport” content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" type=“image/png” sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto+Slab:wght@100..900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Diplomata+SC&family=Gravitas+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="container">
+    <header>
+        <a href="index.html"><img src="images/digital_food_scale_logo.png" alt="Weight & Scales Company Logo"></a>
+    </header>
+    <div class="companylayout">
+        <p id="companyname">DIGITAL FOOD SCALE</p>
+    </div>
+    <nav>
+        <ul>
+            <li><form action="/search" method="get">
+                <input id="searchbox" type="search" id="search" name="query" placeholder="What are you looking for today?" required>
+                <!-- Search icon inside the button -->
+            </form></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Use the main area to add the main content to the webpage -->
+    <main>
+        <div id="adv">
+            <img id="promotionimage" src="images/Promotion.PNG" alt="Discount & Promotions">
+        </div>
+        <div id="cart-container">
+            <div id="cart-product-list-container-div">
+                <h1 class="cart-title">Your Cart - <span id="cart-item-count">0</span> Items</h1>
+                <div id="cart-items-list">
+                    <p class="empty-cart-message">Your cart is empty.</p>
+                </div>
+            </div>
+            <div id="cart-summary-div">
+                <h1 class="summary-title">Order Summary</h1>
+                <div id="cart-total" class="cart-totals">
+                    <table class="cart-total-table">
+                        <tbody>
+                            <tr class="sub-total">
+                                <td class="mark" scope="row">Subtotal:</td>
+                                <td class="amount">
+                                    <span id="subTotalPrice" class="price">NA</span>
+                                </td>
+                            </tr>
+                            <tr class="pickupfree_tr">
+                                <td class="mark" colspan="1" scope="row" >In-Store Pickup</td>
+                                <td class="amount">
+                                    <span class="free-price">FREE</span>
+                                </td>
+                            </tr>
+                            <tr class="grand-total">
+                                <th class="mark" scope="row">
+                                    <strong>Order Total:</strong>
+                                </th>
+                                <td class="amount">
+                                    <strong><span id="grandTotalPrice" class="price">NA</span></strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="promo-gift" class="promo-and-gift">
+                    <table class="promo-table">
+                        <tbody>
+                            <tr class="promo-row">
+                                <td class="mark" scope="row">Have a Promo Code?</td>
+                                <td id="expand-promo" class="expand">+</td>
+                            </tr>
+                            <tr class="gift-row">
+                                <th class="mark" scope="row">Gift options</th>
+                                <td id="expand-gift" class="expand">+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="checkout"><span>Checkout</span></button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Copyright 2099. All Rights Reserved.</p>
+        <p><a href="mailto:contact@weightandscales.com">Request Information</a></p>
+        <p>Prabal Saxena &nbsp; &nbsp; C0947493</p>
+    </footer>
+</div>
+<script src="js/utils.js" defer></script>
+<script src="js/cart.js" defer></script>
+</body>
+</html>

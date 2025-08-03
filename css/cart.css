@@ -1,0 +1,279 @@
+@media screen and (min-width: 1015px), print{
+/*Desktop Viewport: Style rule for header*/
+    
+    #cart-container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        margin-top: 25px;
+    }
+
+    #cart-product-list-container-div {
+        width: 70%;
+        float: left;
+        background-color: white;
+    }
+
+    #cart-summary-div {
+        width: 30%;
+        float: right;
+        background-color: white;
+    }
+
+    .cart-title, .summary-title {
+        height: 90px;
+        padding: 23px 0px 23px 22px;
+        font: 600 38px / 39px "Source Serif Pro", sans-serif;
+        letter-spacing: 0.12px;
+        color: #222;
+    }
+
+    .sole-item {
+        display: flex;
+        width: 97%;
+        border-bottom: 1px solid lightgray;
+        border-right: 1px solid #ddd;
+        padding-right: 43px;
+    }
+
+    .img-div {
+        display: contents;
+    }
+
+    .img-div a {
+        display: contents;
+    }
+
+    .img-div a img {
+        width: 30%;
+        max-height: 290px;
+        margin: 3px;
+        padding: 33px;
+    }
+
+    .item-information {
+        width: 70%;
+        height: 290px;
+    }
+
+    .remove-cart-item {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* width: 100%; */
+        height: 96px;
+    }
+
+    .remove-cart-item a {
+        width: 84%;
+        text-decoration: none;
+    }
+
+    .bottle-info {
+        width: 98%;
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .item-name-link {
+        font: 600 22px / 27px "Source Serif Pro", sans-serif;
+        letter-spacing: 0.12px;
+        color: #222;
+        margin: 3px 3px 3px 0;
+        hyphens: none !important;
+        word-wrap: normal;
+        word-break: normal;
+    }
+
+    .remove-from-cart-btn {
+        width: 10%;
+        margin-right: 15px;
+        border-radius: 50%;
+        border: 0px solid #ccc;
+        background-color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        color: #333;
+        cursor: pointer;
+        height: 36px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .control-qty {
+        display: inline;
+        font-family: 'Segoe UI', sans-serif;
+        align-items: center;
+        margin-left: 26px;
+    }
+
+    .qty-control-div {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    
+    .bottle-qty, .price-tag, .total-price-tag{
+        font-size: 16px;
+        color: #333;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .control-qty-addon {
+        display: inline-block;
+    }
+
+    .control-qty-sub-button,
+    .control-qty-add-button {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        color: #333;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .control-qty-sub-button:hover,
+    .control-qty-add-button:hover {
+        border-color: #666;
+    }
+
+    .control-item-count-span {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        position: relative;
+    }
+
+    .control-item-count-span::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        right: 4px;
+        bottom: -4px;
+        height: 1px;
+        background-color: #ccc;
+    }
+
+    .price {
+        margin-top: 14px;
+        margin-left: 16px;
+        font-weight: 700;
+        font-size: 23px;
+    }
+
+    /* css for table tontent */
+
+    .cart-totals {
+        width: 89%;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin-left: 22px;
+    }
+
+    .promo-and-gift {
+        width: 89%;
+        margin-top: 30px;
+        font-family: Arial, sans-serif;
+        border-bottom: 1px solid #ddd;
+        margin-left: 22px;
+    }
+
+    .cart-total-table, .promo-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid white;
+    }
+
+    .cart-total-table td,
+    .cart-total-table th,
+    .promo-table td,
+    .promo-table th {
+        padding: 10px 0;
+        text-align: right;
+        font-size: 16px;
+        border: 1px solid white;
+    }
+
+    .cart-total-table tr,
+    .promo-table tr {
+        background-color: white;
+    }
+
+    .cart-total-table .mark, 
+    .promo-table .mark {
+        text-align: left;
+        color: #333;
+    }
+
+    .mark {
+        background-color: white;
+    }
+
+    .sub-total .amount .price {
+        font-weight: 400;
+        color: #333;
+        background-color: white;
+        font-size: 18px;
+    }
+
+    #grandTotalPrice {
+        font-size: 24px;
+    }
+    .pickupfree_tr .free-price {
+        color: #28a745; /* Green for FREE */
+        font-weight: bold;
+    }
+
+    .grand-total {
+        border-top: 2px solid #ddd;
+    }
+
+    .grand-total .mark strong {
+        font-size: 18px;
+    }
+
+    .grand-total .amount strong .price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    /* Checkout */
+
+    .checkout {
+        width: 85% !important;
+        height: 63px;
+        border-radius: 28px;
+        margin: 30px;
+        padding: 16px 15px;
+        border: unset;
+        background: #222;
+        opacity: 1;
+        font-size: 1.3rem;
+        display: inline-block;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+        vertical-align: middle;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+    }
+}

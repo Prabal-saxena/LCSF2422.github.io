@@ -306,3 +306,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Call the fetchData function when the page loads
 window.fetchData = fetchData;
 window.appState = appState;
+window.addProductToCart = addProductToCart;
