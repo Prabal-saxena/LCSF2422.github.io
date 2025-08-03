@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto+Slab:wght@100..900&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Diplomata+SC&family=Gravitas+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <div id="container">
@@ -45,10 +46,54 @@
         </div>
         <div id="cart-container">
             <div id="cart-product-list-container-div">
-
+                <h1 class="cart-title">Your Cart - <span id="cart-item-count">0</span> Items</h1>
+                <div id="cart-items-list">
+                    <p class="empty-cart-message">Your cart is empty.</p>
+                </div>
             </div>
             <div id="cart-summary-div">
-
+                <h1 class="summary-title">Order Summary</h1>
+                <div id="cart-total" class="cart-totals">
+                    <table class="cart-total-table">
+                        <tbody>
+                            <tr class="sub-total">
+                                <td class="mark" scope="row">Subtotal:</td>
+                                <td class="amount">
+                                    <span id="subTotalPrice" class="price">NA</span>
+                                </td>
+                            </tr>
+                            <tr class="pickupfree_tr">
+                                <td class="mark" colspan="1" scope="row" >In-Store Pickup</td>
+                                <td class="amount">
+                                    <span class="free-price">FREE</span>
+                                </td>
+                            </tr>
+                            <tr class="grand-total">
+                                <th class="mark" scope="row">
+                                    <strong>Order Total:</strong>
+                                </th>
+                                <td class="amount">
+                                    <strong><span id="grandTotalPrice" class="price">NA</span></strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="promo-gift" class="promo-and-gift">
+                    <table class="promo-table">
+                        <tbody>
+                            <tr class="promo-row">
+                                <td class="mark" scope="row">Have a Promo Code?</td>
+                                <td id="expand-promo" class="expand">+</td>
+                            </tr>
+                            <tr class="gift-row">
+                                <th class="mark" scope="row">Gift options</th>
+                                <td id="expand-gift" class="expand">+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="checkout"><span>Checkout</span></button>
             </div>
         </div>
     </main>

@@ -231,9 +231,8 @@ ul{
     }
 }
 
-@media screen and (min-width: 1015px), print{
-
 /*Desktop Viewport: Style rule for header*/
+@media screen and (min-width: 1015px), print{
 
     header{
         width: 25%;
