@@ -418,10 +418,6 @@ document.addEventListener('click', (event) => {
     }
 })
 
-async function checkout(guestCartId) {
-
-}
-
 // Initial load of all products when product.js is loaded (and DOM is ready)
 document.addEventListener('DOMContentLoaded', () => {
     // Only fetch all products if we are on the product listing page

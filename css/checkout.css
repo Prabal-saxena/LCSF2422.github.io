@@ -1,0 +1,488 @@
+@media screen and (min-width: 1015px), print {
+/*Desktop Viewport: Style rule for header*/
+
+    /* CSS for Information & Payment tab*/
+    .checkout-container{
+        background-color: white;
+        margin-top: 12px;
+        display: block;
+        unicode-bidi: isolate;
+    }
+
+    .checkout-section {
+        display: none;
+        padding-left: 27px;
+    }
+
+    .checkout-section.active {
+        display: block;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .checkout-tabs {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 6px;
+        align-items: center;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        cursor: pointer;
+        border: 0px solid #ccc;
+        width: 100%;
+        background-color: white;
+        color: black;
+        font-size: x-large;
+    }
+
+    .tab-btn.active {
+        border-bottom: 4px solid green;
+        font-weight: bold;
+    }
+
+    /* CSS for content inside each tab*/
+
+    .checkout-section.active {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1%;
+    }
+
+    .checkout-ol {
+        list-style-type: none;
+        width: 65%;
+    }
+
+    #cart-summary-div {
+        width: 35%;
+        background-color: white;
+        padding-top: 56px;
+    }
+
+    .checkout-shipping-address {
+        width: 93%;
+        height: fit-content;
+    }
+
+    .step-content {
+        max-width: 59%;
+        height: fit-content;
+        margin-top: 24px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .all-fields-required-content {
+        font-size: medium;
+        font-style: italic;
+        color: red;
+    }
+
+    .field.required {
+        position: relative;
+        width: max-content;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .field.required .label {
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        color: #666;
+        font-size: 18px;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        background: white;
+        padding: 0 8px;
+    }
+
+    .field.hidden {
+        display: none;   
+    }
+
+    .field .label {
+        position: relative;
+        top: 27px;
+        left: 14px;
+        color: #666;
+        font-size: 18px;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        background: white;
+        padding: 0 8px;
+    }
+
+    .field {
+        position: relative;
+        width: max-content;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form.form-login {
+        margin-top: 21px;
+        height: fit-content;
+    }
+
+    li #store-pickup-form {
+        border-bottom: 1px solid #ccc;
+        height: fit-content;
+    }
+
+    .fieldset {
+        border-width: 0px;
+        display: flex;
+        min-inline-size: min-content;
+        gap: 34px;
+        margin-inline: 2px;
+        border-style: groove;
+        border-image: initial;
+        padding-block: 0.35em 0.625em;
+        padding-inline: 0.75em;
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    #customer-email-fieldset {
+        border-width: 0px;
+        display: flex;
+        min-inline-size: min-content;
+        gap: 9px;
+        margin-inline: 2px;
+        border-style: groove;
+        border-image: initial;
+        padding-block: 0.35em 0.625em;
+        padding-inline: 0.75em;
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    .input-text {
+        width: 429px;
+        height: 54px;
+        padding: 6px 1px 6px 17px;
+        font-size: 19px;
+    }
+
+    .note {
+        font-size: medium;
+        margin-bottom: 18px;
+    }
+
+    .pickupfields .label {
+        position: relative;
+        top: 12px;
+        left: 10px;
+        color: #666;
+        font-size: 18px;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        background: white;
+        padding: 0 8px;
+    }
+
+    /* Free In-store Pickup CSS*/
+
+    .freepick-li {
+        width: 68%;
+        padding-top: 16px;
+    }
+
+    .step-title {
+        padding-left: 5px;
+    }
+
+    .pickup-details {
+        height: 60px;
+    }
+
+    .pickup-person {
+        margin-left: 0;
+        padding: 0;
+        border: unset;
+        max-width: 428px;
+        width: auto !important;
+        display: inline-block;
+    }
+
+    .pickup-person .pickup-person-lable {
+        margin: 4px 0 12px;
+    }
+
+    .pickup-person-control {
+        margin-top: 8px;
+    }
+
+    .pickup-person-details-div {
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    /* Pickup Location*/
+
+    .info__storeloc {
+        margin-bottom: 40px;
+    }
+
+    .info__storeloc h2 {
+        font: 600 26px / 32px "Source Serif Pro", sans-serif;
+        letter-spacing: .12px;
+        color: #222;
+        margin-bottom: 12px;
+        display: block;
+        padding-top: 24px;
+    }
+
+    .info__storeloc span.title__loc {
+        font: bold 15px / 24px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #222;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .info__storeloc .main__openday .open__untildiv {
+        text-underline-position: under;
+        text-decoration: underline;
+        background: url(../images/icons/down-arrow.svg) no-repeat right 17px;
+        position: relative;
+        display: flex;
+        padding-right: 25px;
+        border: 0 !important;
+        padding-left: 0;
+    }
+
+    .info__storeloc .main__openday .open__untildiv .calender__icon {
+        background: url(../images/icons/calendar.svg) no-repeat;
+        background-size: 14.1px 15.5px;
+        height: 15.5px;
+        width: 14.1px;
+        margin-right: 8.95px;
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        left: 0;
+    }
+
+    .info__storeloc .main__openday .open__untildiv .open__until {
+        margin-left: -4px;
+    }
+
+    .info__storeloc .main__openday .open__untildiv span {
+        letter-spacing: .2px;
+        color: #222;
+        font: 600 15px / 24px "acumin-pro", sans-serif;
+    }
+
+    .info__storeloc .main__openday .open__storedays {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+    }
+
+    .info__storeloc .main__openday .open__storedays p.current_day{
+        font-weight: 700; 
+    }
+
+    .info__storeloc .main__openday .open__storedays p {
+        margin: 0;
+    }
+
+    .info__storeloc .store__address {
+        margin-top: 16px;
+    }
+
+    .info__storeloc .store__address span.addr__hiddentxt {
+        font-size: 0;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .info__storeloc .store__address span.addr__txt {
+        display: inline-block;
+    }
+
+    .info__storeloc .store__address span {
+        font: 15px / 24px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #5f5f5f;
+        display: block;
+    }
+
+    .info__storeloc .store__address span.phone__span {
+        text-decoration: underline;
+        display: block;
+    }
+
+    .info__storeloc .store__address span.phone__span a {
+        font: 15px / 24px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #5f5f5f;
+    }
+
+    /*Privacy Terms & Condition */
+
+    #privacyPolicies {
+        width: 68%;
+        padding-top: 24px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+        border-top: 1px solid #ccc;
+    }
+
+    .privacy_note h4, .terms_conditions h4 {
+        font: 700 12px / 18px "acumin-pro", sans-serif;
+        color: #222;
+        margin: 0;
+    }
+
+    .terms_conditions {
+        margin-top: 18px;
+        margin-bottom: 38px;
+    }
+
+    .terms_conditions p, .privacy_note p {
+        max-height: initial;        
+        font: 15px / 18px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #222;
+        margin: 8px 0;
+        max-height: 38px;
+        overflow: hidden;
+        text-align: justify;
+    }
+
+    .new_tab_icon {
+        height: 12px;
+        display: inline;
+    }
+
+    /*View Cart & Continue to Billing Buttons*/
+
+    .checkout-shipping-address .actions-toolbar {
+        text-align: right;
+        height: 195px;
+    }
+
+    .checkout-shipping-address .actions-toolbar .primary {
+        float: none;
+        text-align: right;
+        display: block;
+        padding-top: 30px;
+    }
+
+    .checkout-shipping-address .actions-toolbar .primary a.back-to-cart.bck__cart {
+        letter-spacing: .2px;
+        text-decoration-line: underline;
+        color: #5f5f5f;
+        font: 600 15px / 24px "acumin-pro", sans-serif;
+        display: inline-block;
+    }
+
+    .checkout-shipping-address .actions-toolbar .primary .action.continue.primary.cont__btn {
+        background: #222;
+        border-radius: 28px;
+        font: bold 15px / 24px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #fff;
+        width: 25%;
+        padding: 0;
+        margin-right: 0;
+        display: inline-block;
+        margin-left: 32px;
+        height: 56px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /*Order Summary Css*/
+
+    .cart-title {
+        border-top: 1px solid #ccc;
+        margin-top: 11px;
+        margin-bottom: 11px;
+        padding-top: 15px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 18px;
+        width: 88%;
+    }
+
+    .item-info {
+        display: grid;
+    }
+
+    .sole-item {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        margin-bottom: 35px;
+    }
+
+    .img-div {
+        height: 102px;
+        width: 128px;
+    }
+
+    .item-name-qty {
+        padding: 0 0 0 8px;
+        position: unset;
+        float: left;
+        width: 43%;
+    }
+
+    .item-name-qty a {
+        text-decoration: none;
+        cursor: pointer;
+        font: 600 16px / 27px "Source Serif Pro", sans-serif;
+        letter-spacing: 0.12px;
+        color: #222;
+        margin: 3px 3px 3px 0;
+        hyphens: none !important;
+        word-wrap: normal;
+        word-break: normal;
+    }
+
+    .bottle-qty {
+        text-decoration: none;
+        font: 540 14px / 27px "Source Serif Pro", sans-serif;
+        letter-spacing: 0.12px;
+        color: #222;
+        margin: 3px 3px 3px 0;
+        hyphens: none !important;
+        word-wrap: normal;
+        word-break: normal;       
+    }
+
+    .control-item-count-span {
+        text-decoration: none;
+        font: 540 14px / 27px "Source Serif Pro", sans-serif;
+        letter-spacing: 0.12px;
+        color: #222;
+        margin: 3px 3px 3px 0;
+        hyphens: none !important;
+        word-wrap: normal;
+        word-break: normal;
+    }
+
+    .bottle-info .total-item-price-div .price {
+        font: bold 19px / 24px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #c21313 !important;
+    }
+}
