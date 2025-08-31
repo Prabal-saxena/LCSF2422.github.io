@@ -238,7 +238,7 @@ function submitShippingFormInfo(){
         data[key] = value
     }
 
-    // Get Data from emailLoginForm
+    // Get Data from store-pickup-form
     const storePickupForm = document.getElementById('store-pickup-form');
     const storePickupData = new FormData(storePickupForm);
     for (const [key, value] of storePickupData.entries()){
