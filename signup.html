@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Form</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/css/loginregistration.css">
+</head>
+<body>
+<section>
+    <form id="signupform">
+        <h1>Sign Up</h1>
+        <div class="inputbox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input type="text" id= "username" name="username" required>
+            <label for="">Username</label>
+            <span id="user-availability-message" class="popup-message"></span>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" id="email" name="email" required>
+            <label for="">Email</label>
+            <span id="email-availability-message" class="popup-message"></span>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="call-outline"></ion-icon>
+            <input type="phone" id="phoneNumber" name="phoneNumber" required>
+            <label for="">Phone</label>
+            <span id="phone-availability-message" class="popup-message"></span>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="password" name="password" required>
+            <label for="">Password</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="passwordcon" name="passwordcon" required>
+            <label for="">Confirm Password</label>
+            <input type="text" id="role" name="role" style="display:none" value="CUSTOMER">
+            <input type="text" id="status" name="status" style="display:none" value="ACTIVE">
+        </div>
+        <button id= "submit" type="submit">Sign Up</button>
+        <div class="register">
+            <p>Already have an account? <a href="login.html">Log In</a></p>
+        </div>
+    </form>
+</section>
+<script src="/js/signup.js" defer></script>
+</body>
+</html>
