@@ -407,6 +407,21 @@
         cursor: pointer;
     }
 
+    #login-while-checkout {
+        background: #222;
+        border-radius: 28px;
+        font: bold 15px / 24px "acumin-pro", sans-serif;
+        letter-spacing: .2px;
+        color: #fff;
+        width: 141%;
+        padding: 0;
+        margin-right: 0;
+        display: inline-block;
+        height: 56px;
+        text-align: center;
+        cursor: pointer;
+    }
+
     /*Order Summary Css*/
 
     .cart-title {
