@@ -20,7 +20,7 @@
 <div id="container">
     <header>
         <div class="companylayout">
-        <p id="companyname">DIGITAL FOOD SCALE</p>
+            <p id="companyname">DIGITAL FOOD SCALE</p>
         </div>
     </header>
 
@@ -40,7 +40,7 @@
             <!-- Step 1: Shipping -->
             <div id="shipping" class="checkout-section">
                 <ol class="checkout-ol" id="checkoutSteps">
-                    
+
                     <li class="checkout-shipping-address">
                         <div data-role="title"><h2>Step 1 of 2</h2></div>
                         <div class="step-content">
@@ -54,15 +54,23 @@
                                         <label for="customer-email" class="label"><span>Email Address</span></label>
                                         <span id="email-note" class="note">We will send your order confirmation to this email address.</span>
                                     </div>
-                                    
+
                                     <!-- Password Field (hidden initially) -->
                                     <div class="field hidden" id="password-field">
-                                        <label class="label" for="customer-password"><span>Password</span></label>
                                         <input class="input-text" type="password" name="password" id="customer-password">
-                                        <span class="note">Returning customer? Enter password to log in.</span>
+                                        <label class="label" style="top: -80px;" for="customer-password"><span>Password</span></label>
+                                        <span id="loginFailed" class="note hidden">Password incorrect. Please try again.</span>
+                                    </div>
+                                    <div class="field hidden" id="login-while-checkout-button">
+                                        <button id="login-while-checkout" type="button" class="button action continue primary cont__btn">
+                                            <span>Login now</span>
+                                        </button>
                                     </div>
                                 </fieldset>
                             </form>
+                            <div class="hidden" style="color:limegreen" id="logged-in-title">
+                                <p><h2 class="step-title">Logged-in Now</h2></p>
+                            </div>
                         </div>
                     </li>
 
@@ -136,7 +144,7 @@
                                         <span class="open__until" >Open until</span><span>&nbsp;</span>
                                         <span>6:00 PM</span><span>&nbsp;</span>
                                         <span>Today</span>
-                                        
+
                                     </button>
                                     <div class="open__storedays" style="display:none;">
                                         <p class="current_day">
@@ -219,27 +227,27 @@
                             <h4>Privacy Notice</h4>
                             <p style="max-height: 38px; overflow: hidden;"><span class="paymentcontent_text1div1">The personal informations related to placing an online order, including information collected through the
                             use of cookies and similar tracking technologies that can sometimes be considered personal information, is collected under the authority of the <i>Liquor Control Board of Ontario Act, 20</i></span>
-                            <i><span style="display: none;" class="paymentcontent_text1div2" ><span>&nbsp;</span>19, SO 2019, c 15, Sch 21,
+                                <i><span style="display: none;" class="paymentcontent_text1div2" ><span>&nbsp;</span>19, SO 2019, c 15, Sch 21,
                             Section 3</span></i> and in compliance with the <i>Freedom of Information and Protection of Privacy Act</i> for
-                            the principal purposes of facilitating the processing, delivery and verification of orders, fraud
-                            prevention, customer service, and improving the content and usability of LCBO online channels. If you are
-                            signed into your account, personal information will also be used for remembering your preferences,
-                            personalizing content, optimizing search results, and offers. If you opt in to receive emails it will also be used for the purpose of providing you with personalized electronic communications and offers from the LCBO. You can modify your subscription preferences at any time. When you unsubscribe from marketing email communication, your personal information will be retained for 3 months, after which all of your personal information will be deleted except your email address, which will be retained for a total of 2 years to support compliance with your preferences.  If you have questions regarding the
-                            collection and use of your personal information please contact owner’s Freedom of Information and
-                            Privacy Office
-                            <a href="mailto:prabalsaxena98@gmail.com" aria-label="prabalsaxena98@gmail.com">prabalsaxena98@gmail.com</a>, or 416 ***-2462.
-                            <br><br>
-                            It is a condition of online purchase that customers consent to the collection and disclosure of certain
-                            personal information to and from the owner's fraud prevention service provider. For more information,
-                            including the scope of collection and disclosure and how to withdraw the consent after purchase, please see our updated <a href="#" target="_blank" title="Privacy Policy">
-                            Privacy Policy&nbsp;<img class="new_tab_icon" style="height:12px;" alt="Opens in a new tab" src="https://www.lcbo.com/static/version1752808941/frontend/Lcbo/default/en_CA/images/icons/external-link.png"></a> and <a href="https://www.lcbo.com/content/lcbo/en/corporate-pages/terms-and-conditions.html" target="_blank" title="Terms and Conditions">Terms and Conditions&nbsp;<img class="new_tab_icon" style="height:12px;" alt="Opens in a new tab" src="https://www.lcbo.com/static/version1752808941/frontend/Lcbo/default/en_CA/images/icons/external-link.png"></a>.</p>
+                                the principal purposes of facilitating the processing, delivery and verification of orders, fraud
+                                prevention, customer service, and improving the content and usability of LCBO online channels. If you are
+                                signed into your account, personal information will also be used for remembering your preferences,
+                                personalizing content, optimizing search results, and offers. If you opt in to receive emails it will also be used for the purpose of providing you with personalized electronic communications and offers from the LCBO. You can modify your subscription preferences at any time. When you unsubscribe from marketing email communication, your personal information will be retained for 3 months, after which all of your personal information will be deleted except your email address, which will be retained for a total of 2 years to support compliance with your preferences.  If you have questions regarding the
+                                collection and use of your personal information please contact owner’s Freedom of Information and
+                                Privacy Office
+                                <a href="mailto:prabalsaxena98@gmail.com" aria-label="prabalsaxena98@gmail.com">prabalsaxena98@gmail.com</a>, or 416 ***-2462.
+                                <br><br>
+                                It is a condition of online purchase that customers consent to the collection and disclosure of certain
+                                personal information to and from the owner's fraud prevention service provider. For more information,
+                                including the scope of collection and disclosure and how to withdraw the consent after purchase, please see our updated <a href="#" target="_blank" title="Privacy Policy">
+                                    Privacy Policy&nbsp;<img class="new_tab_icon" style="height:12px;" alt="Opens in a new tab" src="https://www.lcbo.com/static/version1752808941/frontend/Lcbo/default/en_CA/images/icons/external-link.png"></a> and <a href="https://www.lcbo.com/content/lcbo/en/corporate-pages/terms-and-conditions.html" target="_blank" title="Terms and Conditions">Terms and Conditions&nbsp;<img class="new_tab_icon" style="height:12px;" alt="Opens in a new tab" src="https://www.lcbo.com/static/version1752808941/frontend/Lcbo/default/en_CA/images/icons/external-link.png"></a>.</p>
                             <a href="#" role="button" class="Read_more" style="">Read More</a>
                             <a href="#" role="button" class="Read_less" style="display: none;" aria-hidden="true">Read Less</a>
                         </div>
 
                         <div class="terms_conditions">
                             <h4 role="heading">Terms &amp; Conditions </h4>
-                            <p>By placing an order on TOLS.com, you confirm your are 19+ and agree to the updated 
+                            <p>By placing an order on TOLS.com, you confirm your are 19+ and agree to the updated
                                 <a href="https://www.lcbo.com/content/lcbo/en/corporate-pages/terms-and-conditions.html" target="_blank" title="Terms and Conditions">Terms and Conditions <img src="https://www.lcbo.com/static/version1752808941/frontend/Lcbo/default/en_CA/images/icons/external-link.png" class="new_tab_icon" style="height:12px;" alt="Opens in a new tab"></a>.
                             </p>
                         </div>
@@ -265,7 +273,7 @@
                         <h3 class="cart-title"><span id="cart-item-count">0</span> Items In Cart</h3>
                         <h2 class="delivery-title">In-store Pickup</h2>
                         <div id="item-info">
-                        </div>    
+                        </div>
                     </div>
                 </div>
             </div>
@@ -280,16 +288,15 @@
                 </ol>
             </div>
         </div>
-    </main>    
+    </main>
 </div>
 <footer>
-        <p>&copy; Copyright 2099. All Rights Reserved.</p>
-        <p><a href="mailto:contact@weightandscales.com">Request Information</a></p>
-        <p>Prabal Saxena &nbsp; &nbsp; C0947493</p>
+    <p>&copy; Copyright 2099. All Rights Reserved.</p>
+    <p><a href="mailto:contact@weightandscales.com">Request Information</a></p>
+    <p>Prabal Saxena &nbsp; &nbsp; C0947493</p>
 </footer>
 
 <script src="js/utils.js" defer></script>
 <script src="js/checkout.js" defer></script>
-
 </body>
 </html>

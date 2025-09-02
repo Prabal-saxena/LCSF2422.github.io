@@ -407,16 +407,12 @@ async function orderSummaryCalculation() {
     }
 }
 
-document.addEventListener('click', (event) => {
-    if(event.target.classList.contains('checkout')){
-        if(guestCartId)
-            checkout(guestCartId);
-        else{
-            alert('Could not load the session properly, Please reload the page.')
-            return;
-        }
+document.addEventListener('click', () => {
+    const checkoutButton = document.getElementById('checkout-button');
+    if(checkoutButton != null){
+        window.location.href = "checkout.html#shipping";
     }
-})
+});
 
 // Initial load of all products when product.js is loaded (and DOM is ready)
 document.addEventListener('DOMContentLoaded', () => {

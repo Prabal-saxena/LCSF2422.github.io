@@ -1,4 +1,7 @@
 const CART_SERVICE_API_URL = 'http://localhost:8082/api/cart';
+const USER_SERVICE_API_URL = 'http://localhost:8083/api/user';
+const AUTH_USER_TOKEN_EXPIRY_DAYS = 0.0138; // Persist guest cart for 90 days
+const AUTH_USER_TOKEN_NAME = 'authuserjwt';
 const GUEST_CART_ID_COOKIE_NAME = 'guestCartId';
 let guestCartId = getCookie(GUEST_CART_ID_COOKIE_NAME);
 const itemInfo = document.getElementById('item-info');
@@ -26,6 +29,7 @@ function showSectionFromHash() {
 document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('customer-email');
     const passwordField = document.getElementById('password-field');
+    const loginWhileCheckout = document.getElementById('login-while-checkout-button');
     const emailNote = document.getElementById('email-note');
 
     let validationTimer;
@@ -56,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make the AJAX call to find email address existance
     async function checkEmailExistence(email) {
         // In a real application, replace this with your actual API endpoint
-        const apiEndpoint = 'http://localhost:8081/api/check-email'; 
+        const apiEndpoint = USER_SERVICE_API_URL + '/checkEmail';
 
         try {
             const response = await fetch(apiEndpoint, {
@@ -64,27 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email: email }),
+                body: email,
             });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-
-            if (data.exists) {
+            if (!response.ok && response.status != 200) {
+                passwordField.classList.add('hidden');
+                loginWhileCheckout.classList.add('hidden');
+                emailNote.textContent = 'No such registration found, continue as guest or register.';
+                return;
+            }else{
                 // Email exists, unhide the password field
                 passwordField.classList.remove('hidden');
                 emailNote.textContent = 'Welcome back! Please enter your password to log in.';
                 emailNote.style.color = 'green';
-            } else {
-                // Email does not exist
-                passwordField.classList.add('hidden');
-                alert("No such registration found, continue as guest or register.");
-                // Optionally, you can show a message on the page instead of an alert
-                // emailNote.textContent = 'No such registration found. Please register or continue as guest.';
-                // emailNote.style.color = 'orange';
+                loginWhileCheckout.classList.remove('hidden');
+                document.getElementById('loginFailed').classList.add('hidden');
             }
         } catch (error) {
             console.error('Error checking email existence:', error);
@@ -110,6 +108,54 @@ document.addEventListener('DOMContentLoaded', () => {
             emailNote.style.color = 'initial';
         }
     });
+
+    //Login button listener on checkout page
+    loginWhileCheckout.addEventListener('click', async () => {
+        const customerPassword = document.getElementById('customer-password');
+        const loginData = {};
+
+        if (emailInput.value.trim() != '' && customerPassword.value.trim() != '') {
+            
+            const loginForm = document.getElementById('emailLoginForm');
+            const loginCred = new FormData(loginForm);
+            for (const [key, value] of loginCred.entries()){
+                loginData[key] = value
+            }
+
+            if(await callLoginService(loginData)){
+                loginForm.style.display = 'none';
+                document.getElementById('logged-in-title').classList.remove('hidden');
+            }else {
+                document.getElementById('loginFailed').classList.remove('hidden');
+            }
+        }
+    });
+    
+    async function callLoginService(loginData){
+        if (loginData.email && loginData.password) {
+        
+            const response = await fetch(USER_SERVICE_API_URL + '/login', {
+                method : 'POST',
+                headers : {
+                    'Content-Type': 'application/json',
+                    'X-Guest-Cart-Id': guestCartId
+                },
+                body : JSON.stringify(loginData)
+            });
+
+            if (!response.ok){
+                alert("Username or Password Incorrect. Please try again.");
+                return false;
+            }
+            const responseJson = await response.json();
+            if (responseJson != null){
+                console.log(responseJson.token);
+                setCookie(AUTH_USER_TOKEN_NAME, responseJson.token, AUTH_USER_TOKEN_EXPIRY_DAYS);
+                return true;
+            }
+        }
+        return false;
+    }
 });
 
 // Load Order Summary
@@ -230,13 +276,6 @@ function updateOrderSummary(cartData){
 // Submit Shipping Info Button Function
 function submitShippingFormInfo(){
     const data = {};
-
-    // Get Data from emailLoginForm
-    const emailLoginForm = document.getElementById('emailLoginForm');
-    const emailInfoData = new FormData(emailLoginForm);
-    for (const [key, value] of emailInfoData.entries()){
-        data[key] = value
-    }
 
     // Get Data from store-pickup-form
     const storePickupForm = document.getElementById('store-pickup-form');
