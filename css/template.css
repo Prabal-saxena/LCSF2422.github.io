@@ -160,8 +160,8 @@ body{
     }
 
     #companyname {
-        font-size: 62px;
-        margin: 0px 0px 0px 517px;
+        font-size: 64px;
+        margin: 0px 3px 0px 517px;
         background-color: black;
         text-align: right;
         color: white;
@@ -183,12 +183,12 @@ body{
     }
 
     .companylayout{
-        width: 60%;
+        width: 58%;
     }
 
     .search-bar {
         width: 30%;
-        text-align: right;
+        text-align: left;
     }
 
     #searchbox {
@@ -216,7 +216,7 @@ body{
     nav{
         width: 100%;
         border-bottom: 1px solid white;
-        padding: 0px 20% 0px 20%;
+        padding: 15px 20% 0px 20%;
         margin-bottom: 1%;
     }
 

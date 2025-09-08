@@ -86,6 +86,7 @@ function displayProducts(products) {
         // Create the <a> element for the image link
         const anchor = document.createElement('a');
         anchor.href = product.imageUrl || '#'; // Use productPageUrl or a default '#'
+        anchor.className = 'prod-img-anchor';
 
         // Create the <img> element
         const image = document.createElement('img');

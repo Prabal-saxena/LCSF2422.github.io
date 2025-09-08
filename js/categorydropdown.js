@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (category.subCategories && category.subCategories.length > 0) {
                 const subcategoryList = document.createElement('ul');
+                subcategoryList.className = 'dropdown-category-group-ul';
                 
                 category.subCategories.forEach(subcategory => {
                     const listItem = document.createElement('li');
