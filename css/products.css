@@ -3,17 +3,15 @@
 
     .productgrid{
         color: black;
-        width: 89%;
-        margin: 1em 0em 2em 5em;
+        width: 100%;
+        margin: 1em 0em 0em 0em;
         display: grid;
         background-color: white;
         grid-template-columns: auto auto auto;
-        grid-gap: 92px;
-        align-content: stretch;
-        justify-content: center;
-        justify-items: center;
+        grid-gap: 39px;
+        justify-content: space-evenly;
         align-items: end;
-        padding-bottom: 30px;
+        padding-bottom: 4em;
     }
 
     .product-pic-text{
@@ -37,41 +35,38 @@
         background-color: black;
         color: white;
         margin: 2px 2px 2px 160px;
+        cursor: pointer;
     }
 
     .cart-icon-container {
-        position: relative;
-        display: inline-block; /* Or use flexbox */
-        height: 37px;
+        width: 5%;
     }
 
     .cart-icon {
-        width: 59px; /* Adjust size */
+        width: 40px;
         height: 30px;
-        vertical-align: middle;
+        float: left;
     }
 
     .cart-badge {
         position: absolute;
-        top: -8px; /* Adjust positioning */
-        right: -8px; /* Adjust positioning */
+        right: 127px;
         background-color: red;
         color: white;
         border-radius: 50%;
         padding: 3px 6px;
         font-size: 0.7em;
         font-weight: bold;
-        min-width: 18px; /* Ensure circular shape for single digits */
+        min-width: 18px;
         text-align: center;
-        line-height: 1; /* For vertical alignment */
-        display: none; /* Hidden by default when count is 0 */
+        line-height: 1;
+        display: none;
     }
 
     .productimage {
-        display: block;
         margin: auto;
-        height: 196px;
-        width: 331px;
+        height: 243px;
+        width: 226px;
         margin-top: 2em;
     }
 
@@ -133,7 +128,11 @@
     .frame{
         opacity: 0.9;
         height: 358px;
-        width: 393px;
+        width: 390px;
+    }
+
+    .prod-img-anchor {
+        padding: 1px 89px 0px 89px;
     }
 
     .dropdown-content {
@@ -146,7 +145,7 @@
         z-index: 10; /* Ensure it's above other content */
         top: 100%; /* Position below the "Products" link */
         left: 25%; /* Center the dropdown */
-        transform: translateX(-50%); /* Adjust to truly center */
+        transform: translateX(-39%); /* Adjust to truly center */
         padding: 20px; /* Padding inside the whole dropdown box */
         border-radius: 5px;
         opacity: 0;
@@ -201,11 +200,12 @@
         color: #007bff; /* Highlight on hover */
     }
 
-    .dropdown-category-group ul {
+    .dropdown-category-group-ul {
         list-style: none;
         padding: 0;
         margin: 0;
         text-align: left;
+        display: flow;
     }
 
     .dropdown-category-group ul li {

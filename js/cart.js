@@ -8,6 +8,7 @@ const cartItemsList = document.getElementById('cart-items-list');
 const cartSummaryDiv = document.getElementById('cart-summary-div');
 const cartItemCount = document.getElementById('cart-item-count');
 const cartTotal = document.getElementById('cart-total');
+const checkoutButton = document.getElementById('checkout-button');
 let guestCartId = getCookie(GUEST_CART_ID_COOKIE_NAME);
 
 async function fetchCartData(){
@@ -407,8 +408,7 @@ async function orderSummaryCalculation() {
     }
 }
 
-document.addEventListener('click', () => {
-    const checkoutButton = document.getElementById('checkout-button');
+checkoutButton.addEventListener('click', () => {
     if(checkoutButton != null){
         window.location.href = "checkout.html#shipping";
     }

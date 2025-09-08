@@ -454,6 +454,11 @@
         width: 128px;
     }
 
+    .productimg {
+        max-height: 106px;
+        max-width: 100px;
+    }
+
     .item-name-qty {
         padding: 0 0 0 8px;
         position: unset;
