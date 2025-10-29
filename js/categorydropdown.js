@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // *** IMPORTANT: Replace this with the actual URL of your Java API endpoint ***
     // Example: If your Java API runs on http://localhost:8080 and the endpoint is /api/categories
     const JAVA_API_CATEGORIES_URL = 'http://localhost:8081/api/categories';
-    const API_PRODUCT_URL = 'http://localhost:8081/api/product';
+    const API_PRODUCT_URL = 'http://34.31.139.23/api/product';
     // If your frontend and backend are on the same domain/port, you might use a relative path:
     // const JAVA_API_CATEGORIES_URL = '/api/categories';
 

@@ -1,4 +1,4 @@
-const API_PRODUCT_URL = 'http://localhost:8081/api/product';
+const API_PRODUCT_URL = 'http://34.31.139.23/api/product';
 
 const productsContainer = document.getElementById('productsContainer');
 const paginationControls = document.getElementById('paginationControls');
